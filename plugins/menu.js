@@ -195,7 +195,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     })
     if (teks == '404') {
       let judul = `${global.ucapan}, ${name}
-      Note: Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan tanyakan kepada owner`.trim()
+      Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan tanyakan kepada owner`.trim()
       const sections = [
       {
         title: 'ℓιѕт мєηυ ηα∂ια вσт',
