@@ -5,36 +5,59 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-┏─────────────────⬣
-┆   *Hai*, %name 
-┗┬──────────────┈ ⳹
-┏┆⬡ *Tersisa* : %limit Limit
-┆┆⬡ *Role* : %role
-┆┆⬡ *Level* : %level [%exp / %maxexp]
-┆┆⬡ *Exp* : %totalexp XP
-┗┬──────────────┈ ⳹
-┏┤   *Kalender*
-┆┗──────────────┈ ⳹
-┆⬡ *Hari* : %week %weton
-┆⬡ *Tanggal* : %week %weton, %date
-┆⬡ *Tanggal Islam* : %dateIslamic
-┆⬡ *Waktu* : %time
-┗┬──────────────┈ ⳹
-┏┤   *Bot info*
-┆┗──────────────┈ ⳹
-┆⬡ *Uptime* : %uptime
-┆⬡ *Run Bot* : Panel/RDP
-┆⬡ *Bailyes Version* : 4.2.0
-┆⬡ *Database* : %rtotalreg dari %totalreg
-┆⬡ *Memory Used* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-┆⬡ *Instagram* :
-┆⬡ https://instagram.com/mursid.st
-┗─────────────────⬣
+┌────────────────⬣
+│            *Nadia BOT*
+└┬──────────────┈ ⳹
+┌│⬡ *Tersisa* : %limit Limit
+││⬡ *Role* : %role
+││⬡ *Level* : %level 
+││⬡ *Max Exp* : %exp / %maxexp
+││⬡ *Exp* : %totalexp XP
+└┬──────────────┈ ⳹
+┌┤           *Kalender*
+│└──────────────┈ ⳹
+│⬡ *Hari* : %week
+│⬡ *Weton* : %weton
+│⬡ *Tanggal* : %week %weton, %date
+│⬡ *Tanggal Islam* : %dateIslamic
+│⬡ *Waktu* : %time
+└┬──────────────┈ ⳹
+┌┤           *Bot info*
+│└──────────────┈ ⳹
+│⬡ *Limit* : Ⓛ
+│⬡ *Premium* : Ⓟ
+│⬡ *Uptime* : %uptime
+│⬡ *Bailyes Version* : 4.2.0
+│⬡ *Database* : %rtotalreg dari %totalreg
+│⬡ *Memory Used* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+│⬡ *Github* :
+│⬡ https://github.com/Botwa021
+└────────────────⬣
 %readmore`.trim(),
-  header: '┏━┈┈『 %category 』┈┈⬣',
-  body: '┆⬡ %cmd %islimit %isPremium',
-  footer: '┗━───────⬣\n',
+  header: '┌──『 %category 』──⬣',
+  body: '│⬡ %cmd %islimit %isPremium',
+  footer: '└───────⬣\n',
   after: `
+┌──  *BIG THANKS TO*  ───
+│• Allah SWT
+│• Nurutomo as wabot-aq
+│• Istikmal as BochilGaming
+│• Ariffb as stikerin
+│• Aguz Familia
+│• Syahrul
+│• Vanesha Desu
+│• Aniq12
+│• Amirul Dev
+│• Rasell Comel
+│• Faudzan
+│• Krisna
+│• Fatur as Ftwrr
+ | • Krizynoffc
+│• Mursid S
+│• Nadia Cans
+│• All Creator Bot
+└──────
+
 *%npmname@^%version*
 ${'```%npmdesc```'}
 `,
@@ -194,15 +217,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }
     })
     if (teks == '404') {
-      let judul = `${global.ucapan}, ${name}
-      Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan tanyakan kepada owner`.trim()
+      let judul = `${global.ucapan}, ${name}`.trim()
       const sections = [
       {
         title: 'ℓιѕт мєηυ ηα∂ια вσт',
         rows: [
           { title: 'all', rowId: `${_p}? all` },
-          { title: 'info nadia', rowId: `${_p}? infonadia` },
-          { title: 'info mursid', rowId: `${_p}? infomursid` },
           { title: 'game', rowId: `${_p}? game` },
           { title: 'xp', rowId: `${_p}? xp` },
           { title: 'stiker', rowId: `${_p}? stiker` },
@@ -232,7 +252,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       footer: wm,
       mentions: await conn.parseMention(judul),
       title: '',
-      buttonText: "Klik Disini",
+      buttonText: "Click Here",
       sections
     }
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
@@ -259,8 +279,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '(Limit)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(Premium)' : '')
+                .replace(/%islimit/g, menu.limit ? '(Ⓛ)' : '')
+                .replace(/%isPremium/g, menu.premium ? '(Ⓟ)' : '')
                 .trim()
             }).join('\n')
           }),
@@ -287,7 +307,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `𝑷𝒆𝒎𝒊𝒍𝒊𝒌 𝑩𝒐𝒕`, `${_p}owner`, `𝑻𝒉𝒂𝒏𝒌𝒔 𝑻𝒐𝒐`, `${_p}tqto`, `𝑫𝒐𝒏𝒂𝒔𝒊`, `${_p}donasi`)
+    await conn.send3TemplateButtonImg(m.chat, `${global.image}`, text.trim(), wm, `𝑷𝒆𝒎𝒊𝒍𝒊𝒌 𝑩𝒐𝒕`, `${_p}owner`, `𝑻𝒉𝒂𝒏𝒌𝒔 𝑻𝒐𝒐`, `${_p}tqto`, `𝑫𝒐𝒏𝒂𝒔𝒊`, `${_p}donasi`)
   } catch (e) {
     conn.reply(m.chat, '𝑴𝒂𝒂𝒇, 𝒎𝒆𝒏𝒖 𝒔𝒆𝒅𝒂𝒏𝒈 𝒆𝒓𝒓𝒐𝒓', m)
     throw e
