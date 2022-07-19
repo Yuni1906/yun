@@ -52,7 +52,7 @@ const defaultMenu = {
 │• Faudzan
 │• Krisna
 │• Fatur as Ftwrr
- | • Krizynoffc
+|• Krizyn_Ofc
 │• Mursid S
 │• Nadia Cans
 │• All Creator Bot
