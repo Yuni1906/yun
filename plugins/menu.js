@@ -8,30 +8,35 @@ const defaultMenu = {
 ┌────────────────⬣
 │            *Nadia BOT*
 └┬──────────────┈ ⳹
-┌│⬡ *Tersisa* : %limit Limit
-││⬡ *Role* : %role
-││⬡ *Level* : %level 
-││⬡ *Max Exp* : %exp / %maxexp
-││⬡ *Exp* : %totalexp XP
+┌┤⬡ Tersisa : %limit Limit
+││⬡ Role : %role
+││⬡ Level : %level 
+││⬡ Max Exp : %exp / %maxexp
+││⬡ Exp : %totalexp XP
 └┬──────────────┈ ⳹
-┌┤           *Kalender*
+┌┤    *Kalander*
 │└──────────────┈ ⳹
-│⬡ *Hari* : %week
-│⬡ *Weton* : %weton
-│⬡ *Tanggal* : %week %weton, %date
-│⬡ *Tanggal Islam* : %dateIslamic
-│⬡ *Waktu* : %time
+│⬡ Hari : %week
+│⬡ Weton : %weton
+│⬡ Tanggal : %week %weton, %date
+│⬡ Tanggal Islam : %dateIslamic
+│⬡ Waktu : %time
 └┬──────────────┈ ⳹
-┌┤           *Bot info*
+┌┤    *Bot Info*
 │└──────────────┈ ⳹
-│⬡ *Limit* : Ⓛ
-│⬡ *Premium* : Ⓟ
-│⬡ *Uptime* : %uptime
-│⬡ *Bailyes Version* : 4.2.0
-│⬡ *Database* : %rtotalreg dari %totalreg
-│⬡ *Memory Used* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-│⬡ *Github* :
+│⬡ Uptime : %uptime
+│⬡ Bailyes Version : 4.2.0
+│⬡ Database : %rtotalreg dari %totalreg
+│⬡ Memory Used : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+│⬡ Github :
 │⬡ https://github.com/Botwa021
+└┬──────────────┈ ⳹
+┌┤    *Info CMD*
+│└──────────────┈ ⳹
+│⬡ Limit : Ⓛ
+│⬡ Premium : Ⓟ
+│⬡ Instagram :
+│⬡ https://instagram.com/mursid.st
 └────────────────⬣
 %readmore`.trim(),
   header: '┌──『 %category 』──⬣',
@@ -53,6 +58,7 @@ const defaultMenu = {
 │• Krisna
 │• Fatur as Ftwrr
 |• Krizyn_Ofc
+|• Ziv San
 │• Mursid S
 │• Nadia Cans
 │• All Creator Bot
@@ -73,7 +79,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'all') tags = {
     'main': 'Utama',
     'game': 'Game',
-    'rpg': 'RPG',
+    'rpg': 'Epic RPG',
     'xp': 'Exp & Limit',
     'sticker': 'Stiker',
     'kerang': 'Kerang Ajaib',
@@ -82,7 +88,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
-    'nulis': 'MagerNulis & Logo',
+    'nulis': 'Nulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
@@ -97,7 +103,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'game') tags = {
     'game': 'Game',
-    'rpg': 'RPG'
+    'rpg': 'Epic RPG'
   }
   if (teks == 'xp') tags = {
     'xp': 'Exp & Limit'
@@ -124,7 +130,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'anonymous': 'Anonymous Chat'
   }
   if (teks == 'nulis') tags = {
-    'nulis': 'MagerNulis & Logo'
+    'nulis': 'Nulis & Logo'
   }
   if (teks == 'downloader') tags = {
     'downloader': 'Downloader'
