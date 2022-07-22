@@ -1,7 +1,10 @@
+const qrku = "https://telegra.ph/file/95421a93a0ba051a21252.jpg"
+
 let handler = async (m, { conn, usedPrefix }) => conn.sendButton(m.chat, `
 ┏──「 Donasi • Dana 」─⬣
 │ • Gopay : 088233832771
 │ • Dana : 088233832771
+│ • Smartfren : 088233832771
 ╰────────⬣
 ┏──「 *NOTE* 」─⬣
 │ > Ingin donasi? wa.me/6288233832771
