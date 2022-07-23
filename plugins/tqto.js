@@ -29,7 +29,9 @@ Rasel:
 https://github.com/raselcomel
 Mursid:
 https://github.com/Botwa021
-Krizynofc
+Ziv San:
+https://github.com/Zivfurr
+Krizynofc:
 https://github.com/krizynofc
 
 \`\`\`${conn.user.name}\`\`\`
