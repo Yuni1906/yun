@@ -10,9 +10,6 @@ Bot ini menggunakan script github
 
 https://github.com/Fokusdotid/Family-MD
 _*JANGAN LUPA START YA KAK><*_
-
-Mau scriptnya chat owner wa.me/6288233832771
-Script original By Family-MD
 `
      conn.reply(m.chat, txt, m)
 }
