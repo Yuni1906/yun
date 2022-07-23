@@ -6,41 +6,32 @@ let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
 ┌────────────────⬣
-│            *Nadia BOT*
+│            *ɴᴀᴅɪᴀ ʙᴏᴛ*
 └┬──────────────┈ ⳹
-┌┤⬡ Tersisa : %limit Limit
-││⬡ Role : %role
-││⬡ Level : %level 
-││⬡ Max Exp : %exp / %maxexp
-││⬡ Exp : %totalexp XP
+┌┤• *Tersisa* : %limit Limit
+││• *Role* : %role
+││• *Level* : %level 
+││• *Exp* : %totalexp XP 
 └┬──────────────┈ ⳹
-┌┤    *Kalander*
+┌┤           *ᴋᴀʟᴀɴᴅᴇʀ*
 │└──────────────┈ ⳹
-│⬡ Hari : %week
-│⬡ Weton : %weton
-│⬡ Tanggal : %week %weton, %date
-│⬡ Tanggal Islam : %dateIslamic
-│⬡ Waktu : %time
+│• *Hari* : %week
+│• *Tanggal* : %week %weton, %date
+│• *Tanggal Islam* : %dateIslamic
+│• *Waktu* : %time
 └┬──────────────┈ ⳹
-┌┤    *Bot Info*
+┌┤           *ʙᴏᴛ ɪɴғᴏ*
 │└──────────────┈ ⳹
-│⬡ Uptime : %uptime
-│⬡ Bailyes Version : 4.2.0
-│⬡ Database : %rtotalreg dari %totalreg
-│⬡ Memory Used : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-│⬡ Github :
-│⬡ https://github.com/Botwa021
-└┬──────────────┈ ⳹
-┌┤    *Info CMD*
-│└──────────────┈ ⳹
-│⬡ Limit : Ⓛ
-│⬡ Premium : Ⓟ
-│⬡ Instagram :
-│⬡ https://instagram.com/mursid.st
+│• *Uptime* : %uptime
+│• *Bailyes Version* : 4.2.0
+│• *Database* : %rtotalreg dari %totalreg
+│• *Memory Used* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+│• *Github* :
+│• https://github.com/Botwa021
 └────────────────⬣
 %readmore`.trim(),
   header: '┌──『 %category 』──⬣',
-  body: '│⬡ %cmd %islimit %isPremium',
+  body: '│• %cmd %islimit %isPremium',
   footer: '└───────⬣\n',
   after: `
 ┌──  *BIG THANKS TO*  ───
@@ -57,8 +48,8 @@ const defaultMenu = {
 │• Faudzan
 │• Krisna
 │• Fatur as Ftwrr
-|• Krizyn_Ofc
-|• Ziv San
+ | • Krizyn_Ofc
+│• Ziv San
 │• Mursid S
 │• Nadia Cans
 │• All Creator Bot
@@ -68,8 +59,7 @@ const defaultMenu = {
 ${'```%npmdesc```'}
 `,
 }
-let haori1 = (./anuu.mp3)
-let haori2 = (./mrsidgtg.mp3) //Sesuaikan Dengan Nama File 
+let haori = './anuu.mp3' // SCRIPT ORIGINAL BY FAMILY MD
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
@@ -79,7 +69,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'all') tags = {
     'main': 'Utama',
     'game': 'Game',
-    'rpg': 'Epic RPG',
+    'rpg': 'RPG',
     'xp': 'Exp & Limit',
     'sticker': 'Stiker',
     'kerang': 'Kerang Ajaib',
@@ -88,7 +78,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
-    'nulis': 'Nulis & Logo',
+    'nulis': 'MagerNulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
@@ -103,7 +93,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'game') tags = {
     'game': 'Game',
-    'rpg': 'Epic RPG'
+    'rpg': 'RPG'
   }
   if (teks == 'xp') tags = {
     'xp': 'Exp & Limit'
@@ -130,7 +120,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'anonymous': 'Anonymous Chat'
   }
   if (teks == 'nulis') tags = {
-    'nulis': 'Nulis & Logo'
+    'nulis': 'MagerNulis & Logo'
   }
   if (teks == 'downloader') tags = {
     'downloader': 'Downloader'
@@ -315,9 +305,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonImg(m.chat, `${global.image}`, text.trim(), `*Official Bot By ${'0'.split('@')[0]}}*/n*Powered By ${'0'.split('@')[0]}}*`, `𝑷𝒆𝒎𝒊𝒍𝒊𝒌 𝑩𝒐𝒕`, `${_p}owner`, `𝑻𝒉𝒂𝒏𝒌𝒔 𝑻𝒐𝒐`, `${_p}tqto`, m)
-     await conn.sendFile(m.chat, haori1, 'bzz.opus', null, m, true) 
-     await conn.sendFile(m.chat, haori2, 'bzz2.opus', null, m, true)
+    await conn.send3TemplateButtonImg(m.chat, `${global.image}`, text.trim(), wm, `𝑷𝒆𝒎𝒊𝒍𝒊𝒌 𝑩𝒐𝒕`, `${_p}owner`, `𝑻𝒉𝒂𝒏𝒌𝒔 𝑻𝒐𝒐`, `${_p}tqto`, `𝑫𝒐𝒏𝒂𝒔𝒊`, `${_p}donasi`)
+ conn.sendFile(m.chat, haori, 'anuu.mp3', null, m, true, {
+type: 'audioMessage', // paksa tanpa convert di ffmpeg
+ptt: true
+     }) 
  } catch (e) {
     conn.reply(m.chat, '𝑴𝒂𝒂𝒇, 𝒎𝒆𝒏𝒖 𝒔𝒆𝒅𝒂𝒏𝒈 𝒆𝒓𝒓𝒐𝒓', m)
     throw e
