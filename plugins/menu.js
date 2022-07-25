@@ -6,7 +6,7 @@ let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
 ┌────────────────⬣
-│            *ɴᴀᴅɪᴀ ʙᴏᴛ*
+│            ❦︎𝐘𝐮𝐧𝐢𝐢 𝐌𝐧𝐲𝐞𝐝𝐢𝐚𝐤𝐚𝐧 𝐌𝐞𝐧𝐮:❦︎
 └┬──────────────┈ ⳹
 ┌┤• *Tersisa* : %limit Limit
 ││• *Role* : %role
@@ -51,7 +51,7 @@ const defaultMenu = {
  | • Krizyn_Ofc
 │• Ziv San
 │• Mursid S
-│• Nadia Cans
+│• Nadia Cans and Yuni
 │• All Creator Bot
 └──────
 
